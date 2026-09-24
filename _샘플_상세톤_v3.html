@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NUKA 상세 톤 샘플 v3</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{
+  --ink:#2B2416; --ink-soft:#6B6154; --line:#E3DACA;
+  --cream:#F7F3EA; --cream-2:#EFE8DA; --gold:#B8923F; --white:#FFFDF9;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  color:var(--ink); background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+img,video{display:block;width:100%;height:auto;}
+
+/* ---------- 히어로 ---------- */
+.hero{position:relative;height:100vh;min-height:560px;overflow:hidden;background:#1a1610;}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,10,.30) 0%,rgba(20,16,10,.10) 40%,rgba(20,16,10,.55) 100%);}
+.hero .inner{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 24px;}
+.hero .eyebrow{color:rgba(255,253,249,.82);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 26px;font-weight:500;}
+.hero h1{
+  margin:0;color:#FFFDF9;font-weight:200;line-height:1.12;letter-spacing:.01em;
+  font-size:clamp(34px,6.4vw,78px);
+}
+.hero h1 em{font-style:normal;font-weight:400;}
+.hero .kr{margin:30px 0 0;color:rgba(255,253,249,.88);font-size:clamp(14px,1.5vw,17px);line-height:1.9;font-weight:300;}
+.scrollDown{position:absolute;left:50%;bottom:38px;transform:translateX(-50%);color:rgba(255,253,249,.75);font-size:11px;letter-spacing:.2em;text-align:center;}
+.scrollDown span{display:block;width:1px;height:46px;background:rgba(255,253,249,.5);margin:12px auto 0;animation:drop 2.1s ease-in-out infinite;transform-origin:top;}
+@keyframes drop{0%{transform:scaleY(0);opacity:0}40%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+
+/* ---------- 섹션 공통 ---------- */
+section{padding:clamp(84px,13vw,170px) 24px;}
+.narrow{max-width:640px;margin:0 auto;text-align:center;}
+.label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 30px;font-weight:600;}
+h2.display{
+  margin:0 0 34px;font-weight:200;line-height:1.22;letter-spacing:.005em;
+  font-size:clamp(27px,4.3vw,50px);
+}
+h2.display em{font-style:normal;font-weight:400;}
+.lede{margin:0;font-size:clamp(14px,1.55vw,16.5px);line-height:2.15;color:var(--ink-soft);font-weight:300;}
+.lede + .lede{margin-top:26px;}
+.tone-cream{background:var(--cream);}
+.tone-cream2{background:var(--cream-2);}
+
+/* ---------- 이미지 자리 ---------- */
+.shot{position:relative;background:linear-gradient(140deg,#E8DFCC 0%,#F3EDE0 48%,#DED2B8 100%);}
+.shot.bleed{margin:0;}
+.shot .ph{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;}
+.shot .ph.tall{aspect-ratio:4/5;}
+.shot .ph p{margin:0;font-size:12px;letter-spacing:.14em;color:#A2977F;text-transform:uppercase;}
+
+/* ---------- split ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;}
+.split .pad{padding:clamp(40px,6vw,88px);}
+.split h3{margin:0 0 20px;font-size:clamp(20px,2.4vw,29px);font-weight:300;line-height:1.4;}
+.split p{margin:0;font-size:15px;line-height:2.05;color:var(--ink-soft);font-weight:300;}
+@media(max-width:820px){.split{grid-template-columns:1fr;}}
+
+/* ---------- 숫자 ---------- */
+.figures{display:grid;grid-template-columns:repeat(3,1fr);max-width:900px;margin:0 auto;border-top:1px solid var(--line);}
+.figures div{padding:clamp(34px,5vw,58px) 14px;text-align:center;border-bottom:1px solid var(--line);border-right:1px solid var(--line);}
+.figures div:last-child{border-right:0;}
+.figures b{display:block;font-size:clamp(26px,3.6vw,42px);font-weight:200;letter-spacing:.01em;margin:0 0 12px;}
+.figures small{display:block;font-size:12px;letter-spacing:.11em;color:var(--ink-soft);line-height:1.7;}
+@media(max-width:600px){.figures{grid-template-columns:1fr;}.figures div{border-right:0;}}
+
+/* ---------- 경계 안내 ---------- */
+.cut{background:var(--ink);color:#C9BA95;text-align:center;padding:40px 24px;font-size:12.5px;letter-spacing:.06em;line-height:1.9;}
+.cut b{color:#F0E4C4;font-weight:500;}
+.note{background:#FFF8E8;border-top:1px solid #EBDFC2;border-bottom:1px solid #EBDFC2;padding:30px 24px;text-align:center;font-size:12.5px;color:#7A6B4A;line-height:1.9;}
+</style>
+</head>
+<body>
+
+<!-- ============ 히어로 ============ -->
+<div class="hero">
+  <video src="https://cdn.jsdelivr.net/gh/rnehgml000-sys/nuka-assets@main/hero-nz.mp4" poster="https://cdn.jsdelivr.net/gh/rnehgml000-sys/nuka-assets@main/hero-nz-poster.jpg" autoplay muted loop playsinline></video>
+  <div class="veil"></div>
+  <div class="inner">
+    <p class="eyebrow" data-aos="fade" data-aos-delay="150">Mānuka Honey from New Zealand</p>
+    <h1 data-aos="fade-up" data-aos-delay="300">FROM THE SOURCE,<br><em>TO YOUR TABLE.</em></h1>
+    <p class="kr" data-aos="fade-up" data-aos-delay="620">뉴질랜드에서 병째로, 우리 집 식탁까지.</p>
+  </div>
+  <div class="scrollDown">SCROLL<span></span></div>
+</div>
+
+<!-- ============ 01 브랜드 ============ -->
+<section class="tone-cream">
+  <div class="narrow">
+    <p class="label" data-aos="fade-up">A Spoonful, Every Morning</p>
+    <h2 class="display" data-aos="fade-up" data-aos-delay="100">하루 한 스푼.<br><em>그거면 충분합니다.</em></h2>
+    <p class="lede" data-aos="fade-up" data-aos-delay="220">
+      마누카꽃은 일 년 중 몇 주만 핍니다.<br>
+      그 짧은 계절에만 모을 수 있는 꿀이에요.
+    </p>
+    <p class="lede" data-aos="fade-up" data-aos-delay="320">
+      우리는 그 계절을 병에 담아,<br>
+      뉴질랜드에서 그대로 보내드립니다.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 풀블리드 비주얼 ============ -->
+<div class="shot bleed" data-aos="fade">
+  <div class="ph"><p>designer — 마누카 꽃·풍경 컷 (풀블리드)</p></div>
+</div>
+
+<!-- ============ 02 신뢰 · split ============ -->
+<section style="padding:0;">
+  <div class="split">
+    <div class="shot"><div class="ph tall"><p>designer — 병 라벨 배치번호 클로즈업</p></div></div>
+    <div class="pad" data-aos="fade-up">
+      <p class="label">Traceable</p>
+      <h3>병에 찍힌 번호를,<br>성적서에서 다시 만나실 수 있습니다.</h3>
+      <p>
+        어느 배치에서 나온 꿀인지, 그 배치의 MGO가 얼마로 측정됐는지.<br><br>
+        숫자를 가리지 않고 그대로 보여드립니다. 병 하단의 번호와 상세페이지의 성적서 번호를 맞춰보세요.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 숫자 ============ -->
+<section class="tone-cream2">
+  <div class="narrow" style="margin-bottom:clamp(40px,6vw,70px);">
+    <p class="label" data-aos="fade-up">What's Inside</p>
+    <h2 class="display" data-aos="fade-up" data-aos-delay="100">덜어내고,<br><em>남긴 것.</em></h2>
+  </div>
+  <div class="figures">
+    <div data-aos="fade-up"><b>MGO 265<span style="font-size:.6em;">+</span></b><small>배치별 성적서 공개</small></div>
+    <div data-aos="fade-up" data-aos-delay="120"><b>250<span style="font-size:.52em;">g</span></b><small>크림드 · 약 25일분</small></div>
+    <div data-aos="fade-up" data-aos-delay="240"><b>100<span style="font-size:.52em;">%</span></b><small>뉴질랜드산 마누카꿀<br>Monofloral 분류</small></div>
+  </div>
+</section>
+
+<!-- ============ 여기서부터 기존 구조 ============ -->
+<div class="cut">
+  ─ 샘플은 여기까지입니다 ─<br>
+  이 아래로 <b>기존 v2 블록</b>(구성 안내 · MGO 설명 · 성적서 · 후기 · FAQ · 제품정보 · 사업자 서류)이 그대로 이어집니다.
+</div>
+<div class="note">
+  <b>법정 고지는 없애지 않습니다.</b> 식품표시사항·통관 안내·사업자 정보는 지금처럼 하단에 그대로 둡니다.<br>
+  위쪽을 비우는 대신 아래로 몰아넣는 구조라, 규정은 그대로 지키면서 첫인상만 달라집니다.
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({duration:900,easing:'ease-out-cubic',once:true,offset:90});
+</script>
+</body>
+</html>
